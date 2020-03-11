@@ -1,7 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
-class databaseData(models.Model)#ref. no.
+class databaseData(models.Model):#ref. no.
     Name = models.CharField(max_length=50)
     Department_Name = models.CharField(max_length=50)
     Programme_Name = models.CharField(max_length=100)
@@ -16,16 +17,16 @@ class databaseData(models.Model)#ref. no.
     DOB = models.DateField()
     Submission_Date = models.DateField()
     Payment_Status = models.CharField(max_length=15)
-    Gender = models.CharField()
+    Gender = models.CharField(max_length=15)
     Nationality = models.CharField(max_length=50)
     Category = models.CharField(max_length=20)
     PWD = models.SlugField(max_length=5)
     Martial_Status = models.SlugField(max_length=5)
     Mobile_Number = models.BigIntegerField()
-    Father's_Name = models.CharField(max_length=50)
-    Mother's_Name = models.CharField(max_length=50)
+    Fathers_Name = models.CharField(max_length=50)
+    Mothers_Name = models.CharField(max_length=50)
     Aadhar_Number = models.BigIntegerField()
-    Address = models.CharField()
+    Address = models.CharField(max_length=100)
     #program  details
     # Programme_Name Department_Name
     #Student_Status# Preference_1
@@ -43,10 +44,10 @@ class databaseData(models.Model)#ref. no.
     Max_Score = models.SmallIntegerField()
     Valid_Upto = models.DateField()
     Rank = models.BigIntegerField()
-    Percentile = DecimalField(max_digits=4, decimal_places=2)
+    # Percentile = DecimalField(max_digits=4, decimal_places=2)
     # Qualifying Degree Details
     #Discipline
-    Degree_Name = models.CharField()
+    Degree_Name = models.CharField(max_length=100)
     University_Name = models.CharField(max_length=200)
     University_City = models.CharField(max_length=50)
     Country = models.CharField(max_length=50)
@@ -54,7 +55,7 @@ class databaseData(models.Model)#ref. no.
     Year_of_Completion = models.DateField()
     Year_of_Admission = models.DateField()
     Duration = models.SmallIntegerField()
-    Rank_in_Institute = models.CharField()
+    Rank_in_Institute = models.CharField(max_length=10)
     Result_Status = models.CharField(max_length=20)
     Evaluation_Pattern = models.CharField(max_length=20)
     Grade_Type = models.CharField(max_length=50)
@@ -87,50 +88,50 @@ class databaseData(models.Model)#ref. no.
     Overall_Maximum_Marks = models.DecimalField(max_digits=8, decimal_places=3)
     Overall_Percentage = models.DecimalField(max_digits=8, decimal_places=3)
     #previous
-    PE1_Examination = models.CharField()
+    PE1_Examination = models.CharField(max_length=50)
     PE1_Year = models.DateField()
-    PE1_Board = models.CharField()
-    PE1_Subjects = models.CharField()
+    PE1_Board = models.CharField(max_length=50)
+    PE1_Subjects = models.CharField(max_length=50)
     PE1_Score = models.DecimalField(max_digits=5, decimal_places=2)
     PE1_MaxScore = models.DecimalField(max_digits=5, decimal_places=2)
     PE1_Percentage = models.DecimalField(max_digits=4, decimal_places=2)
-    PE1_Rank = models.CharField()
+    PE1_Rank = models.CharField(max_length=10)
 
-    PE2_Examination = models.CharField()
+    PE2_Examination = models.CharField(max_length=50)
     PE2_Year = models.DateField()
-    PE2_Board = models.CharField()
-    PE2_Subjects = models.CharField()
+    PE2_Board = models.CharField(max_length=50)
+    PE2_Subjects = models.CharField(max_length=50)
     PE2_Score = models.DecimalField(max_digits=5, decimal_places=2)
     PE2_MaxScore = models.DecimalField(max_digits=5, decimal_places=2)
     PE2_Percentage = models.DecimalField(max_digits=4, decimal_places=2)
-    PE2_Rank = models.CharField()
+    PE2_Rank = models.CharField(max_length=10)
 
-    PE3_Examination = models.CharField()
+    PE3_Examination = models.CharField(max_length=50)
     PE3_Year = models.DateField()
-    PE3_Board = models.CharField()
-    PE3_Subjects = models.CharField()
+    PE3_Board = models.CharField(max_length=50)
+    PE3_Subjects = models.CharField(max_length=50)
     PE3_Score = models.DecimalField(max_digits=5, decimal_places=2)
     PE3_MaxScore = models.DecimalField(max_digits=5, decimal_places=2)
     PE3_Percentage = models.DecimalField(max_digits=4, decimal_places=2)
-    PE3_Rank = models.CharField()
+    PE3_Rank = models.CharField(max_length=10)
 
     #expereince details
-    ED_Designation = models.CharField()
-    ED_Organization = models.CharField()
-    ED_From = models.CharField()
-    ED_To = models.CharField()
-    ED_RolesandResponsibilities = models.CharField()
-    ED_Gross_Pay(Monthly) = models.CharField()
+    ED_Designation = models.CharField(max_length=50)
+    ED_Organization = models.CharField(max_length=50)
+    ED_From = models.CharField(max_length=50)
+    ED_To = models.CharField(max_length=50)
+    ED_RolesandResponsibilities = models.CharField(max_length=100)
+    ED_Gross_Pay_Monthly = models.CharField(max_length=20)
 
     #Publications
-    P_Papers_Published = models.CharField()
-    P_No._of _Papers_in_Conference_Proceedings = models.CharField()
-    P_No._of _Papers_in_Conference_Proceedings_not_Published = models.CharField()
-    P_No._of _Book_Chapters = models.CharField()
+    P_Papers_Published = models.CharField(max_length=4)
+    P_NoofPapersinConference_Proceedings = models.CharField(max_length=4)
+    P_NoofPapersinConferenceProceedingsnotPublished = models.CharField(max_length=4)
+    P_NoofBookChapters = models.CharField(max_length=4)
 
     #Refree details
-    Ref_Name = models.CharField()
-    Ref_Organization = models.CharField()
+    Ref_Name = models.CharField(max_length=30)
+    Ref_Organization = models.CharField(max_length=30)
     Ref_EmailId = models.EmailField()
     Ref_Contact_Number = models.BigIntegerField()
-    Ref_Address = models.CharField()
+    Ref_Address = models.CharField(max_length=50)
